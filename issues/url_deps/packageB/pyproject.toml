@@ -7,7 +7,7 @@ build-backend = "setuptools.build_meta"
 
 
 [project]
-name = "packageA"
+name = "packageB"
 dynamic = ["version"]
 authors = [
     {name = "Alice Biometrics", email = "dev@alicebiometrics.com"},
