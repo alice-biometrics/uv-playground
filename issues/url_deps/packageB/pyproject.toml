@@ -1,0 +1,27 @@
+[build-system]
+requires = [
+    "setuptools>=42",
+    "wheel",
+]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "packageA"
+dynamic = ["version"]
+authors = [
+    {name = "Alice Biometrics", email = "dev@alicebiometrics.com"},
+]
+description = "Package B"
+requires-python = ">=3.10"
+classifiers = [
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+]
+dependencies = [
+    "pydantic",
+]
+
+[tool.setuptools.dynamic]
+version = {file = "src/VERSION"}
