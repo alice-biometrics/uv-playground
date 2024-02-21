@@ -1,0 +1,26 @@
+name: Install with uv
+
+on:
+  workflow_dispatch:
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Setup Python (uv)
+        run: | # from https://github.com/astral-sh/uv/issues/1386
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          uv venv .venv
+          echo "VIRTUAL_ENV=.venv" >> $GITHUB_ENV
+          echo "$PWD/.venv/bin" >> $GITHUB_PATH
+          mkdir -p $(pip cache dir)
+
+      - name: Install
+        run: uv pip install -r requirements.txt
