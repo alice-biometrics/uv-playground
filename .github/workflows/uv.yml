@@ -21,6 +21,12 @@ jobs:
           echo "VIRTUAL_ENV=.venv" >> $GITHUB_ENV
           echo "$PWD/.venv/bin" >> $GITHUB_PATH
           mkdir -p $(pip cache dir)
+      
+      - uses: actions/cache@v4
+        id: cache-uv
+        with:
+          path: ~/.cache/uv
+          key: ${{ runner.os }}-python-3.11-uv
 
       - name: Install
         run: uv pip install -r requirements.txt
