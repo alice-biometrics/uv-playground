@@ -8,3 +8,12 @@ To reproduce this, just run:
 pip install "uv==0.1.16"
 uv pip install -r requirements.txt
 ```
+
+Solved in https://github.com/astral-sh/uv/pull/2684 
+
+```console
+pip install "uv==0.1.28"
+uv pip install -r requirements.txt
+```
+
+:party:

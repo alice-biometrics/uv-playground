@@ -1,1 +1,2 @@
 packageA @ git+https://@github.com/alice-biometrics/uv-playground@main#egg=src&subdirectory=issues/url_deps/packageA
+packageB @ git+https://@github.com/alice-biometrics/uv-playground@main#egg=src&subdirectory=issues/url_deps/packageB
